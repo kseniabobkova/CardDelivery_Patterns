@@ -4,7 +4,6 @@ import com.codeborne.selenide.SelenideElement;
 import com.codeborne.selenide.logevents.SelenideLogger;
 import io.qameta.allure.selenide.AllureSelenide;
 import lombok.Data;
-import lombok.val;
 import org.junit.jupiter.api.*;
 import org.openqa.selenium.Keys;
 import ru.netology.delivery.data.DataGenerator;
@@ -12,20 +11,17 @@ import ru.netology.delivery.data.DataGenerator;
 import java.time.Duration;
 
 import static com.codeborne.selenide.Condition.*;
-import static com.codeborne.selenide.Selectors.byText;
-import static com.codeborne.selenide.Selectors.withText;
 import static com.codeborne.selenide.Selenide.*;
 
 @Data
 
 class DeliveryTest {
 
-    DataGenerator dataGenerator = new DataGenerator();
-    String firstDate = dataGenerator.getDate(4);
-    String newDate = dataGenerator.getDate(10);
-    String city = dataGenerator.getCity();
-    String name = dataGenerator.getName();
-    String phone = dataGenerator.getPhone();
+    String firstDate = DataGenerator.getDate(4);
+    String newDate = DataGenerator.getDate(10);
+    String city = DataGenerator.getCity();
+    String name = DataGenerator.getName();
+    String phone = DataGenerator.getPhone();
 
     @BeforeAll
     static void setUpAll() {
